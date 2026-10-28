@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Cinema — бронирование билетов в кино</title>
+    <meta name="description"
+          content="Online Cinema — бронирование билетов в кинотеатр онлайн. Выберите дату, кинотеатр, сеанс и места в зале.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!--  ШАПКА САЙТА  -->
+<header class="header" id="top">
+    <div class="container header__inner">
+
+        <!-- логотип -->
+        <a class="logo" href="#top" aria-label="Online Cinema — на главную">
+            <svg class="logo__icon" width="46" height="40" viewBox="0 0 46 40" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+                <path d="M2 15 L34 5 L37 14 L5 24 Z"/>
+                <path d="M9 12 L11 20"/>
+                <path d="M17 10 L19 18"/>
+                <path d="M25 8 L27 16"/>
+                <rect x="5" y="24" width="36" height="14" rx="2"/>
+            </svg>
+        </a>
+
+        <!-- кнопка меню для мобильных -->
+        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false"
+                aria-controls="nav">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+
+        <!-- меню -->
+        <nav class="nav" id="nav" aria-label="Основная навигация">
+            <ul class="nav__list">
+                <li><a class="nav__link nav__link--active" href="#top">Главная</a></li>
+                <li><a class="nav__link" href="#film">Фильмы</a></li>
+                <li><a class="nav__link" href="#options">Кинотеатры</a></li>
+                <li>
+                    <button class="nav__link nav__link--btn" type="button" data-info="events">
+                        События
+                    </button>
+                </li>
+                <li>
+                    <button class="nav__link nav__link--btn" type="button" data-info="support">
+                        Поддержка
+                    </button>
+                </li>
+            </ul>
+
+            <span class="user">
+                <span class="user__name">Привет, Мила</span>
+                <img class="user__photo" src="img/avatar.jpg" alt="Фото профиля" width="40" height="40">
+            </span>
+        </nav>
+
+    </div>
+
+    <div class="container header__content" id="film">
+
+        <div class="header__info-block">
+            <p class="header__original">Avengers: Infinity War</p>
+            <h1 class="header__title">Мстители: война бесконечности</h1>
+            <p class="header__text">
+                Пока Мстители и их союзники продолжают защищать мир от различных опасностей,
+                с которыми не смог бы справиться один супергерой, новая угроза возникает из космоса:
+                Танос. Межгалактический тиран преследует цель собрать все шесть Камней Бесконечности&nbsp;—
+                артефакты невероятной силы, с помощью которых можно менять реальность по своему желанию.
+                Всё, с чем Мстители сталкивались ранее, вело к этому моменту&nbsp;— судьба Земли никогда
+                ещё не была столь неопределённой.
+            </p>
+
+            <button class="header__play" type="button" aria-label="Смотреть трейлер">
+                <svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true">
+                    <path d="M25 15 2 29V1z" fill="#e5352b"/>
+                </svg>
+            </button>
+
+            <ul class="header__meta">
+                <li class="meta__item meta__item--time">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="1.8" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9.2"/>
+                        <path d="M12 7v5.4l3.4 2" stroke-linecap="round"/>
+                    </svg>
+                    <span>240 мин.</span>
+                </li>
+                <li class="meta__item meta__item--imdb">
+                    <img class="meta__imdb" src="img/imdb.png" alt="IMDb" width="44" height="22">
+                    <span class="meta__rating">9.2</span>
+                    <span class="meta__rating-max">/ 10</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="container header__bottom">
+        <div class="header__divider"></div>
+
+        <form class="ticket-options" id="options" action="#scheme">
+            <div class="option option--date">
+                <span class="option__label" id="date-label">Дата</span>
+                <div class="dates" role="group" aria-labelledby="date-label">
+                    <button class="date" type="button" data-date="2026-04-27">
+                        <span class="date__month">АПР</span>
+                        <span class="date__day">27</span>
+                        <span class="date__weekday">ПТ</span>
+                    </button>
+                    <button class="date date--active" type="button" data-date="2026-04-28">
+                        <span class="date__month">АПР</span>
+                        <span class="date__day">28</span>
+                        <span class="date__weekday">СБ</span>
+                    </button>
+                    <button class="date" type="button" data-date="2026-04-29">
+                        <span class="date__month">АПР</span>
+                        <span class="date__day">29</span>
+                        <span class="date__weekday">ВС</span>
+                    </button>
+                    <button class="date" type="button" data-date="2026-04-30">
+                        <span class="date__month">АПР</span>
+                        <span class="date__day">30</span>
+                        <span class="date__weekday">ПН</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="option option--cinema">
+                <label class="option__label" for="cinema">Кинотеатр</label>
+                <div class="select">
+                    <select class="select__field" id="cinema" name="cinema">
+                        <option>Октябрь, ул. Калужская 28</option>
+                        <option>Синема Парк, ул. Ленина 15</option>
+                        <option>Формула Кино, пр. Мира 101</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="option option--time">
+                <label class="option__label" for="time">Время</label>
+                <div class="select">
+                    <select class="select__field" id="time" name="time">
+                        <option>23:00</option>
+                        <option>19:30</option>
+                        <option>21:15</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</header>
+
+<main>
+
+    <!--  ВЫБОР МЕСТ  -->
+    <section class="scheme container" id="scheme" aria-labelledby="scheme-title">
+        <h2 class="visually-hidden" id="scheme-title">Выбор мест в зале</h2>
+
+        <div class="hall">
+            <div class="hall__screen">
+                <span class="hall__bar"></span>
+                <span class="hall__cone"></span>
+            </div>
+
+            <!-- места строятся скриптом: js/scripts.js -->
+            <div class="hall__rows" id="hall-rows"></div>
+
+            <ul class="legend">
+                <li class="legend__item">
+                    <span class="seat seat--free legend__seat" aria-hidden="true"></span>
+                    <span class="legend__text">Свободно</span>
+                </li>
+                <li class="legend__item">
+                    <span class="seat seat--active legend__seat" aria-hidden="true"></span>
+                    <span class="legend__text">Выбрано</span>
+                </li>
+                <li class="legend__item">
+                    <span class="seat seat--booked legend__seat" aria-hidden="true"></span>
+                    <span class="legend__text">Занято</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!--  ИТОГО И ОПЛАТА  -->
+    <section class="price container" id="price" aria-labelledby="price-title">
+        <div class="price__left">
+            <h2 class="price__label" id="price-title">Всего к оплате</h2>
+            <p class="price__sum"><span id="total">0</span> ₽</p>
+            <p class="price__selected" id="selected-info">Места не выбраны</p>
+        </div>
+
+        <button class="price__btn" type="button" id="pay">Перейти к оплате</button>
+    </section>
+
+</main>
+
+<!--  ОКНО О ФИЛЬМЕ  -->
+<div class="lightbox" id="film-card" role="dialog" aria-modal="true" aria-labelledby="film-card-title" hidden>
+    <div class="lightbox__overlay" data-close></div>
+
+    <div class="lightbox__inner">
+        <div class="lightbox__box">
+            <button class="lightbox__close" type="button" data-close aria-label="Закрыть окно">×</button>
+
+            <div class="lightbox__content">
+                <p class="lightbox__kicker">Avengers: Infinity War</p>
+                <h2 class="lightbox__title" id="film-card-title">Мстители: война бесконечности</h2>
+
+                <ul class="lightbox__meta">
+                    <li>2018</li>
+                    <li>фантастика, боевик</li>
+                    <li>240 мин.</li>
+                    <li>IMDb 9.2</li>
+                </ul>
+
+                <p class="lightbox__text">
+                    Режиссёры Энтони и Джо Руссо. Мстители объединяются, чтобы остановить Таноса,
+                    который собирает Камни Бесконечности.
+                </p>
+
+                <a class="lightbox__btn" href="#scheme" data-close>Выбрать места</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  ОКНО ПОДТВЕРЖДЕНИЯ  -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__box">
+        <h2 class="modal__title" id="modal-title">Билеты забронированы</h2>
+        <p class="modal__text" id="modal-text"></p>
+        <button class="modal__btn" type="button" data-close>Отлично</button>
+    </div>
+</div>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
